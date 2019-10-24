@@ -11,10 +11,10 @@ export class UserService {
   constructor(private http : HttpClient) { }
 
 
-// getUsersAll(){
-//     return this.http.get(this.apiUrl + '/api/users?page=2');
+getUsersAll(){
+   return this.http.get(this.apiUrl + '/api/users?page=2');
 
-// }
+}
 
 
 addUsers(obj){
