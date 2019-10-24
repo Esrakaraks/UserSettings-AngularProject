@@ -1,8 +1,29 @@
 <div class="container" style="margin :20px">
     <h1 style = "margin-left: 400px"> USER LİST </h1>
-    <div class="buttondesigner"> 
-     <a href="/add"  style =" border-radius: 50%" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Add User</a>
+   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" (click)="showModal=true" data-target="#myModal">Open Modal</button>
+
+
+    
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" [ngClass]="{'show' :showModal}">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"  (click)="showModal=false" data-dismiss="modal">&times;</button>
+      
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Register</button>
+      </div>
     </div>
+
+  </div>
+</div>
 
     <div class="listdesigner">
 
