@@ -16,22 +16,18 @@
      </div>
       <div class="modal-body">
          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" #name  placeholder="Enter name" >
            
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">First Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Enter Firstname">
+            <label >Job</label>
+            <input type="text" class="form-control"  #job  placeholder="Enter job">
         </div>
-        <div class="form-group">
-            <label for="exampleInputLast1">Last Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="lastnameHelp" placeholder="Enter Lastname">
-        </div>
-       
+        
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger" data-dismiss="modal">Register</button>
+        <button type="submit" class="btn btn-danger" (click)="adduser(name,job)" data-dismiss="modal">Register</button>
       </div>
     </div>
 
