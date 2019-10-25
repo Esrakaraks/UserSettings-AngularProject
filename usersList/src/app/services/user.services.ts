@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Post} from '../components/list/post';
-import { Observable } from 'rxjs';
-
 @Injectable({
     providedIn : 'root'
 })
-
-
 export class UserService {
 	apiUrl= 'https://reqres.in';
   constructor(private http : HttpClient) { }
@@ -22,7 +18,7 @@ addUsers(obj){
    return this.http.get(this.apiUrl+'/api/users?page=id'+id);
  }
 
- updateUsers(id:number,obj){
+ updateUsers(id:number,obj:Post){
    return this.http.put(this.apiUrl+ '/api/users?page=2'+id,obj)
    
 }

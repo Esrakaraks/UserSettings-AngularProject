@@ -1,8 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../services/user.services';
-import { Router } from '@angular/router';
-
 import {Post} from './post';
 
 
@@ -11,31 +9,24 @@ import {Post} from './post';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
+
 export class ListComponent implements OnInit {
-  
-  
+ 
   post: Post[] = [];
 
-
-  constructor(private userservice:UserService,public router: Router) {
-    
-   }
-
+  constructor(private userservice:UserService) { }
   ngOnInit() {
-    
   }
-  
   adduser(name:HTMLInputElement,job:HTMLInputElement ){
-  
-    const obj={
+  const obj={
       name : name.value,
       job: job.value
-      
     };
+
    let obs= this.userservice.addUsers(obj)
      obs.subscribe((resp:Post) =>{
-       console.log(resp);
-       const usernumber=this.post.push(resp);
+         console.log(resp);
+         const usernumber=this.post.push(resp);
      
     
    })

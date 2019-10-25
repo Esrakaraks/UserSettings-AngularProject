@@ -1,9 +1,6 @@
 <div class="container" style="margin :20px">
     <h1 style = "margin-left: 400px"> USER LİST </h1>
    <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" (click)="showModal=true" data-target="#myModal">Add User</button>
-
-
-    
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog" [ngClass]="{'show' :showModal}">
   <div class="modal-dialog">
@@ -18,8 +15,7 @@
          <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
             <input type="text" class="form-control"  #name placeholder="Enter name" >
-           
-        </div>
+          </div>
         <div class="form-group">
             <label >Job</label>
             <input type="text" class="form-control" #job placeholder="Enter job">
@@ -31,23 +27,23 @@
       </div>
     </div>
 
+   </div>
   </div>
-</div>
-
-    <div class="listdesigner" *ngFor="let item of post">
-
+      <div class="listdesigner" *ngFor="let item of post" >
+          <div class="card" style ="margin :20px;  width:300px; height:250px" >
+            <h5 class="card-header">Edit information</h5>
+            <div class="card-body">
+                <div class="list-group" style = "margin:20px; width : 220px" >
+                <a [routerLink]="['userdata',item.id]" class="list-group-item list-group-item-action">{{item.name}}</a>
+                <a [routerLink]="['userdata',item.id]" class="btn btn-danger" style ="margin :20px">Update</a>
+                <a  [routerLink]="['userdata',item.id]" class="btn btn-danger">Delete</a>
+            </div>
         
-            <div class="card" style ="margin :20px;  width:300px; height:250px" >
-        <h5 class="card-header">Edit information</h5>
-        <div class="card-body">
-          <div class="list-group" style = "margin:20px; width : 220px" >
-          <a [routerLink]="['userdata',item.id]" class="list-group-item list-group-item-action">{{item.name}}</a>
-          <a [routerLink]="['userdata',item.id]" class="btn btn-danger" style ="margin :20px">Update</a>
-           <a  [routerLink]="['userdata',item.id]" class="btn btn-danger">Delete</a>
- </div>
-    
  
- </div>
+         </div>
+
+ 
+
 </div>
 
           

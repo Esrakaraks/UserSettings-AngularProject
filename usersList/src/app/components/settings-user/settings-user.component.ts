@@ -26,9 +26,7 @@ post:Post
       })
     })
   }
-
-  updateuser(id:number,name:HTMLInputElement,job:HTMLInputElement){
-    
+updateuser(id:number,name:HTMLInputElement,job:HTMLInputElement){
     const obj :Post={
       name : name.value,
       job: job.value
@@ -38,6 +36,7 @@ post:Post
  .subscribe(resp=>{
   this.router.navigate[''];
  })
+ 
   }
   deleteuser(id:number){
     this.userservice.deleteUsers(id)

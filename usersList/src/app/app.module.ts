@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
+
 import { UserService } from './services/user.services';
 import {FormsModule} from '@angular/forms';
 import { SettingsUserComponent } from './components/settings-user/settings-user.component';
@@ -13,7 +13,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
   declarations: [
     AppComponent,
     ListComponent,
-    AddUserComponent,
     SettingsUserComponent
   ],
   imports: [
