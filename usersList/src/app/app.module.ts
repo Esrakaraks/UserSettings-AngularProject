@@ -8,6 +8,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserService } from './services/user.services';
 import {FormsModule} from '@angular/forms';
 import { SettingsUserComponent } from './components/settings-user/settings-user.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { SettingsUserComponent } from './components/settings-user/settings-user.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
