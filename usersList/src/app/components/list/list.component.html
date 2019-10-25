@@ -29,7 +29,7 @@
    
    </div>
   </div>
-      <div class="listdesigner" *ngFor="let item of post; let i=index" >
+      <div class="listdesigner" *ngFor="let item of post | slice : (pager.currentPage - 1) * pager.pageSize : ((pager.currentPage - 1) * pager.pageSize) + pager.pageSize ; let i=index; " >
           <div class="card" style ="margin :20px;  width:300px; height:250px" >
             <h5 class="card-header">Edit information</h5>
             <div class="card-body">
@@ -52,7 +52,7 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li *ngFor="let page of pager.pageList" class="page-item">
-      <a class="page-link">{{page}}</a>
+      <a class="page-link"(click)="setPage(page)">{{page}}</a>
     </li>
   </ul>
 </nav>

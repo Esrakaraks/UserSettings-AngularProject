@@ -23,19 +23,17 @@ export class ListComponent implements OnInit {
       job: job.value
     };
 
-   let obs= this.userservice.addUsers(obj)
-     obs.subscribe((resp:Post) =>{
-         console.log(resp);
-          let  usernumber=this.post.push(resp);
-          this.pager = this.getPager(usernumber);
-     })
+    let obs= this.userservice.addUsers(obj)
+    obs.subscribe((resp:Post) =>{
+        console.log(resp);
+         let  usernumber=this.post.push(resp);
+         this.pager = this.getPager(usernumber);
+    })
 
     
  
   }
-
-  
-  getPager(totalItem: number, pageSize: number = 3, currentPage: number = 1): Pager {
+   getPager(totalItem: number, pageSize: number = 3, currentPage: number = 1): Pager {
     let pager = new Pager();
     pager.pageSize = Math.ceil(totalItem / pageSize);
     pager.currentPage = currentPage;
@@ -43,7 +41,9 @@ export class ListComponent implements OnInit {
       pager.pageList.push(i);
     return pager;
   }
-
+  setPage(page: number) {
+    this.pager.currentPage = page;
+  }
 
 
 }

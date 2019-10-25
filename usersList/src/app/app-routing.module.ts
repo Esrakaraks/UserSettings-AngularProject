@@ -5,13 +5,12 @@ import { SettingsUserComponent } from './components/settings-user/settings-user.
 
 
 const routes: Routes = [
-  {
-    path:'',component:ListComponent
-  },
   
+  { path: '', redirectTo: "/page", pathMatch: "full" },
+  { path: "page", component: ListComponent },
 
 {
-    path:'userdata/:id',component:SettingsUserComponent 
+    path:'page/userdata/:id',component:SettingsUserComponent 
   }
 ];
 
