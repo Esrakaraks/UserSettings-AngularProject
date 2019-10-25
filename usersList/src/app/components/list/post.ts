@@ -1,8 +1,8 @@
 export class  Post{
+    id:number;
     name:string;
     job:string;
-    id?:number;
-    createdAt?:Date;
+   
 
 
 }

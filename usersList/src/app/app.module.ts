@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserService } from './services/user.services';
+import {FormsModule} from '@angular/forms';
 import { SettingsUserComponent } from './components/settings-user/settings-user.component';
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SettingsUserComponent } from './components/settings-user/settings-user.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
