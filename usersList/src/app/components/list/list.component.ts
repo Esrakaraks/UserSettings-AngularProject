@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../services/user.services';
 import {Post} from './post';
+import { Pager } from './page';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Post} from './post';
 })
 
 export class ListComponent implements OnInit {
- 
+  pager: Pager;
   post: Post[] = [];
 
   constructor(private userservice:UserService) { }
@@ -26,15 +27,22 @@ export class ListComponent implements OnInit {
      obs.subscribe((resp:Post) =>{
          console.log(resp);
           let  usernumber=this.post.push(resp);
-          console.log(usernumber);
-     
+          this.pager = this.getPager(usernumber);
+     })
+
     
-   })
  
   }
 
   
-
+  getPager(totalItem: number, pageSize: number = 3, currentPage: number = 1): Pager {
+    let pager = new Pager();
+    pager.pageSize = Math.ceil(totalItem / pageSize);
+    pager.currentPage = currentPage;
+    for (let i = 1; i <= Math.ceil(totalItem / pageSize); i++)
+      pager.pageList.push(i);
+    return pager;
+  }
 
 
 
