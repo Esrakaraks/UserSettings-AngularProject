@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './../../services/user.services';
 import {Post} from './post';
@@ -26,7 +25,8 @@ export class ListComponent implements OnInit {
    let obs= this.userservice.addUsers(obj)
      obs.subscribe((resp:Post) =>{
          console.log(resp);
-         const usernumber=this.post.push(resp);
+          let  usernumber=this.post.push(resp);
+          console.log(usernumber);
      
     
    })
