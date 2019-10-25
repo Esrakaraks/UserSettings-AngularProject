@@ -35,8 +35,8 @@ export class ListComponent implements OnInit {
    let obs= this.userservice.addUsers(obj)
      obs.subscribe((resp:Post) =>{
        console.log(resp);
-       this.post.push(resp);
-      
+       const usernumber=this.post.push(resp);
+     
     
    })
  

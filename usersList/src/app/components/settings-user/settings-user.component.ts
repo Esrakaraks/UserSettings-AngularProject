@@ -1,5 +1,8 @@
+import { ActivatedRoute,Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { ListComponent } from './../list/list.component';
-import { Component, OnInit,Input } from '@angular/core';
+import { UserService } from './../../services/user.services';
+
 import {Post} from '../list/post';
 @Component({
   selector: 'app-settings-user',
@@ -7,14 +10,41 @@ import {Post} from '../list/post';
   styleUrls: ['./settings-user.component.css']
 })
 export class SettingsUserComponent implements OnInit {
-  post: Post[] = [];
-  
-  constructor() { }
+post:Post
 
-  ngOnInit() {
+
+  
+  constructor(private userservice:UserService,private route:ActivatedRoute,private router: Router) {
+    
   }
 
+  ngOnInit() {
+    this.route.params.subscribe(params=>{
+      this.userservice.getItem(params.id)
+      .subscribe((resp:Post)=>{
+        this.post=resp;
+      })
+    })
+  }
+
+  updateuser(id:number,name:HTMLInputElement,job:HTMLInputElement){
+    
+    const obj :Post={
+      name : name.value,
+      job: job.value
       
+    };
+ this.userservice.updateUsers(id,obj)
+ .subscribe(resp=>{
+  this.router.navigate[''];
+ })
+  }
+  deleteuser(id:number){
+    this.userservice.deleteUsers(id)
+    .subscribe(resp=>{
+      console.log(resp);
+    })
+  }
       
  
 

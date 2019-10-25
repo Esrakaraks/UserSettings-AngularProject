@@ -12,13 +12,21 @@ export class UserService {
 	apiUrl= 'https://reqres.in';
   constructor(private http : HttpClient) { }
 
-  getUsersAll(){
-    return this.http.get(this.apiUrl + '/api/users?page=2');
  
- }
- 
- 
- addUsers(obj){
+
+addUsers(obj){
    return this.http.post(this.apiUrl + '/api/users',obj);
  }
+
+ getItem(id:number){
+   return this.http.get(this.apiUrl+'/api/users?page=id'+id);
+ }
+
+ updateUsers(id:number,obj){
+   return this.http.put(this.apiUrl+ '/api/users?page=2'+id,obj)
+   
+}
+deleteUsers(id:number){
+  return this.http.delete(this.apiUrl+ '/api/users?page=2'+id)
+}
 }
