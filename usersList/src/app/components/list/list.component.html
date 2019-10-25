@@ -35,11 +35,13 @@
 </div>
 
     <div class="listdesigner" *ngFor="let item of post">
-          <div class="list-group" style = "margin:45px; width : 300px" >
-          <a href="/userdata" class="list-group-item list-group-item-action">{{item.name}}</a>
-      </div>
           
-        
+        <div class="card" style ="margin :20px;  width:300px; height:250px" >
+        <h5 class="card-header">Edit information</h5>
+        <div class="card-body">
+          <div class="list-group" style = "margin:20px; width : 220px" >
+          <a href="/userdata" class="list-group-item list-group-item-action">{{item.name}}</a>
+ </div>
     
  
  </div>

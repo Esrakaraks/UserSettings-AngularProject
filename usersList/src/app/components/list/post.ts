@@ -1,5 +1,5 @@
 export class  Post{
-    id:number;
+    id?:number;
     name:string;
     job:string;
    
