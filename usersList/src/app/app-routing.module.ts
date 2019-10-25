@@ -14,7 +14,7 @@ const routes: Routes = [
   },
 
 {
-    path:'userdata',component:SettingsUserComponent 
+    path:'userdata/:id',component:SettingsUserComponent 
   }
 ];
 
