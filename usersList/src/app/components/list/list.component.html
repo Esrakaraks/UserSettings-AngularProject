@@ -1,5 +1,5 @@
 <div class="container" style="margin :20px">
-    <h1 style = "margin-left: 400px"> USER LİST </h1>
+    <h1 style = "margin-left: 400px; padding:10px;"> USER LİST </h1>
    <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" (click)="showModal=true" data-target="#myModal">Add User</button>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog" [ngClass]="{'show' :showModal}">
@@ -39,23 +39,23 @@
                 <a  [routerLink]="['userdata',item.id]" class="btn btn-danger">Delete</a>
                 
             </div>
-            <div class="card-class">
-            
-             <div class="card bg-dark text-white">
+            <div class="card-class" style="margin:20px; ">
+                <div class="card bg-dark text-white">
                 <div class="card-body">total number of users: {{i+1}}</div>
              </div>
-            </div>
+           
            
          </div>
 
  
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li *ngFor="let page of pager.pageList" class="page-item">
-      <a class="page-link"(click)="setPage(page)">{{page}}</a>
-    </li>
-  </ul>
-</nav>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li *ngFor="let page of pager.pageList" class="page-item">
+                  <a class="page-link"(click)="setPage(page)">{{page}}</a>
+                </li>
+              </ul>
+            </nav>
+         </div>
 </div>
 
           
